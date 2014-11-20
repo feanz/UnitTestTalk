@@ -1,0 +1,5 @@
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk\bin\Debug\UnitTestTalk.dll
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk\bin\Debug\UnitTestTalk.pdb
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk\obj\Debug\UnitTestTalk.csprojResolveAssemblyReference.cache
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk\obj\Debug\UnitTestTalk.dll
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk\obj\Debug\UnitTestTalk.pdb

@@ -1,0 +1,17 @@
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\UnitTestTalk.Tests.Unit.dll
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\UnitTestTalk.Tests.Unit.pdb
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\nunit.framework.dll
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\nunit.framework.xml
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\obj\Debug\UnitTestTalk.Tests.Unit.csprojResolveAssemblyReference.cache
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\obj\Debug\UnitTestTalk.Tests.Unit.dll
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\obj\Debug\UnitTestTalk.Tests.Unit.pdb
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\FluentAssertions.Core.dll
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\FluentAssertions.dll
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\FluentAssertions.pdb
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\FluentAssertions.xml
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\FluentAssertions.Core.pdb
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\FluentAssertions.Core.xml
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\UnitTestTalk.dll
+c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\UnitTestTalk.pdb
+C:\Users\Richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\Moq.dll
+C:\Users\Richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\Moq.xml
