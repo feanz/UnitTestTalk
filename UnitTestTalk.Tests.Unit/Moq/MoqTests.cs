@@ -45,7 +45,7 @@ namespace UnitTestTalk.Tests.Unit.Moq
                 Id = 1,
                 Name = "Steve",
                 IsVip = true
-                
+
             };
 
             var mockProfileRepository = new Mock<IProfileRepository>();
@@ -58,7 +58,7 @@ namespace UnitTestTalk.Tests.Unit.Moq
 
             sut.GetProfile(1);
 
-            mockProfileEventHandler.Verify(handler => handler.VipAccessed(),Times.Once);
+            mockProfileEventHandler.Verify(handler => handler.VipAccessed(), Times.Once);
         }
 
         [Test]

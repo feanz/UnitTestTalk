@@ -66,7 +66,27 @@ namespace UnitTestTalk.Workshop
 
             if (!validationErrors.Any())
             {
+                var membership = _membershipRepository.Get(request.Username);
 
+                if (membership == null)
+                {
+                    validationErrors.Add(new ValidationResult("User does not exist"));
+                }
+                else
+                {
+                    var passwordHash = _hashingService.Hash(request.Password);
+
+                    if (passwordHash == membership.PasswordHash)
+                    {
+                        membership.LastLogin = DateTime.UtcNow;
+                        _membershipRepository.Update(membership);
+                        response.ValidLogin = true;
+                    }
+                    else
+                    {
+                        validationErrors.Add(new ValidationResult("Password username combination invalid"));
+                    }
+                }
             }
 
             response.Errors = validationErrors;
@@ -79,6 +99,28 @@ namespace UnitTestTalk.Workshop
             if (request == null) throw new ArgumentNullException("request");
 
             var valid = false;
+
+            var validationErrors = ValidateRequest(request)
+                .ToList();
+
+            if (!validationErrors.Any())
+            {
+                var membership = _membershipRepository.Get(request.Username);
+
+                if (membership == null)
+                {
+                    validationErrors.Add(new ValidationResult("User does not exist"));
+                }
+                else
+                {
+                    var passwordHash = _hashingService.Hash(request.Password);
+
+                    if (passwordHash == membership.PasswordHash)
+                    {
+                        valid = true;
+                    }
+                }
+            }
 
             return valid;
         }
