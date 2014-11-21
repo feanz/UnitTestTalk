@@ -15,3 +15,8 @@ c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\UnitTes
 c:\users\richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\UnitTestTalk.pdb
 C:\Users\Richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\Moq.dll
 C:\Users\Richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\Moq.xml
+C:\Users\Richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\UnitTestTalk.Tests.Unit.dll.config
+C:\Users\Richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\Ploeh.AutoFixture.AutoMoq.dll
+C:\Users\Richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\Ploeh.AutoFixture.dll
+C:\Users\Richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\Ploeh.AutoFixture.xml
+C:\Users\Richard\Projects\UnitTestTalk\UnitTestTalk.Tests.Unit\bin\Debug\Ploeh.AutoFixture.AutoMoq.xml

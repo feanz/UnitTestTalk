@@ -39,7 +39,7 @@ namespace UnitTestTalk.Tests.Unit.ExpectedOutput
         [TestCase(50, DisplayMessage.None)]
         [TestCase(100, DisplayMessage.None)]
         [TestCase(101, DisplayMessage.InsufficientFunds)]
-        public void Request_money_display_appropraite_message(int amountRequested, DisplayMessage messge)
+        public void Request_money_display_appropriate_message(int amountRequested, DisplayMessage messge)
         {
             //Arrange 
             var card = new Card(true, 100);

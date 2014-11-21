@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,25 @@
     <Compile Include="ProfileType.cs" />
     <Compile Include="StandardProfileValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workshop\AuthenticationService.cs" />
+    <Compile Include="Workshop\Models\Events\BaseEvent.cs" />
+    <Compile Include="Workshop\Models\Response\BaseResponse.cs" />
+    <Compile Include="Workshop\Models\Requests\ChangePasswordRequest.cs" />
+    <Compile Include="Workshop\Models\Response\ChangePasswordResponse.cs" />
+    <Compile Include="Workshop\IEventHandler.cs" />
+    <Compile Include="Workshop\IHashingService.cs" />
+    <Compile Include="Workshop\IMembershipRepository.cs" />
+    <Compile Include="Workshop\Models\Requests\LoginRequest.cs" />
+    <Compile Include="Workshop\Models\Response\LoginResponse.cs" />
+    <Compile Include="Workshop\Models\Membership.cs" />
+    <Compile Include="Workshop\Models\Requests\RegisterRequest.cs" />
+    <Compile Include="Workshop\Models\Response\RegisterResponse.cs" />
+    <Compile Include="Workshop\Models\Requests\ResetPasswordRequest.cs" />
+    <Compile Include="Workshop\Models\Response\ResetPasswordResponse.cs" />
+    <Compile Include="Workshop\Models\Requests\UpdateEmailRequest.cs" />
+    <Compile Include="Workshop\Models\Response\UpdateEmailResponse.cs" />
+    <Compile Include="Workshop\Models\Requests\ValidateCredentialsRequest.cs" />
+    <Compile Include="Workshop\Models\Events\RegistrationEvent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
