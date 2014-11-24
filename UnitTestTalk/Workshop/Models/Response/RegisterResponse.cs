@@ -2,5 +2,6 @@
 {
     public class RegisterResponse : BaseResponse
     {
+        public bool Registered { get; set; }
     }
 }

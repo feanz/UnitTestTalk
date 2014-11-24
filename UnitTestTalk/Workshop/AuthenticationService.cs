@@ -10,7 +10,7 @@ using UnitTestTalk.Workshop.Models.Response;
 
 namespace UnitTestTalk.Workshop
 {
-    public class AuthenticationService
+    public class AuthenticationService : IAuthenticationService
     {
         private readonly IMembershipRepository _membershipRepository;
         private readonly IHashingService _hashingService;
@@ -48,6 +48,8 @@ namespace UnitTestTalk.Workshop
                 {
                     Username = request.Username
                 });
+
+                response.Registered = true;
             }
 
             response.Errors = validationErrors;
@@ -80,6 +82,12 @@ namespace UnitTestTalk.Workshop
                     {
                         membership.LastLogin = DateTime.UtcNow;
                         _membershipRepository.Update(membership);
+
+                        _eventhandler.Publish(new LoginEvent
+                        {
+                            Username = membership.Username
+                        });
+
                         response.ValidLogin = true;
                     }
                     else
@@ -125,11 +133,11 @@ namespace UnitTestTalk.Workshop
             return valid;
         }
 
-        public ChangePasswordResponse ChangePassword(ChangePasswordRequest request)
+        public UpdatePasswordResponse UpdatePassword(UpdatePasswordRequest request)
         {
             if (request == null) throw new ArgumentNullException("request");
 
-            var response = new ChangePasswordResponse();
+            var response = new UpdatePasswordResponse();
 
             var validationErrors = ValidateRequest(request)
               .ToList();
@@ -151,6 +159,8 @@ namespace UnitTestTalk.Workshop
                         var newPassword = _hashingService.Hash(request.NewPassword);
 
                         membership.PasswordHash = newPassword;
+
+                        _membershipRepository.Update(membership);
 
                         response.PasswordUpdated = true;
                     }
@@ -292,7 +302,7 @@ namespace UnitTestTalk.Workshop
             return errors;
         }
 
-        private IEnumerable<ValidationResult> ValidateRequest(ChangePasswordRequest request)
+        private IEnumerable<ValidationResult> ValidateRequest(UpdatePasswordRequest request)
         {
             //todo implement this to the required spec
             throw new NotImplementedException();

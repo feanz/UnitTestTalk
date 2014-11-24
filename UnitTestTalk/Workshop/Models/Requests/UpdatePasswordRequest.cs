@@ -1,6 +1,6 @@
 ﻿namespace UnitTestTalk.Workshop.Models.Requests
 {
-    public class ChangePasswordRequest 
+    public class UpdatePasswordRequest 
     {
         public string Username  { get; set; }
 
