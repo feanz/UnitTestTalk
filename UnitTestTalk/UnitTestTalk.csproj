@@ -52,12 +52,14 @@
     <Compile Include="StandardProfileValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workshop\AuthenticationService.cs" />
+    <Compile Include="Workshop\IAuthenticationService.cs" />
     <Compile Include="Workshop\IPasswordService.cs" />
     <Compile Include="Workshop\Models\Events\BaseEvent.cs" />
+    <Compile Include="Workshop\Models\Events\LoginEvent.cs" />
     <Compile Include="Workshop\Models\Requests\SendPasswordResetEmailRequest.cs" />
     <Compile Include="Workshop\Models\Response\BaseResponse.cs" />
-    <Compile Include="Workshop\Models\Requests\ChangePasswordRequest.cs" />
-    <Compile Include="Workshop\Models\Response\ChangePasswordResponse.cs" />
+    <Compile Include="Workshop\Models\Requests\UpdatePasswordRequest.cs" />
+    <Compile Include="Workshop\Models\Response\UpdatePasswordResponse.cs" />
     <Compile Include="Workshop\IEventHandler.cs" />
     <Compile Include="Workshop\IHashingService.cs" />
     <Compile Include="Workshop\IMembershipRepository.cs" />

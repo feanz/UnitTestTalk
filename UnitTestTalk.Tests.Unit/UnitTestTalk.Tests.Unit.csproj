@@ -61,7 +61,6 @@
     <Compile Include="Assertion\AssertionTests.cs" />
     <Compile Include="Assertion\Customer.cs" />
     <Compile Include="Assertion\DumbCustomerService.cs" />
-    <Compile Include="AutoFixture\AutoFixture.cs" />
     <Compile Include="BDD\GivenWhenThen.cs" />
     <Compile Include="BDD\SimpleStyle.cs" />
     <Compile Include="BDD\Spec.cs" />
