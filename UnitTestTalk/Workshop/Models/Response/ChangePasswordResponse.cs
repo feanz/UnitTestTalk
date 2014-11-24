@@ -2,5 +2,6 @@
 {
     public class ChangePasswordResponse :BaseResponse
     {
+        public bool PasswordUpdated { get; set; }
     }
 }

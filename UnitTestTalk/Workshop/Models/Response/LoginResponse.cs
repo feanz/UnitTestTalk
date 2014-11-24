@@ -2,5 +2,6 @@
 {
     public class LoginResponse :BaseResponse
     {
+        public bool ValidLogin { get; set; }
     }
 }

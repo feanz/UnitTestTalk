@@ -2,5 +2,6 @@
 {
     public class UpdateEmailResponse : BaseResponse
     {
+        public bool EmailUpdated { get; set; }
     }
 }

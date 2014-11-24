@@ -52,7 +52,9 @@
     <Compile Include="StandardProfileValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workshop\AuthenticationService.cs" />
+    <Compile Include="Workshop\IPasswordService.cs" />
     <Compile Include="Workshop\Models\Events\BaseEvent.cs" />
+    <Compile Include="Workshop\Models\Requests\SendPasswordResetEmailRequest.cs" />
     <Compile Include="Workshop\Models\Response\BaseResponse.cs" />
     <Compile Include="Workshop\Models\Requests\ChangePasswordRequest.cs" />
     <Compile Include="Workshop\Models\Response\ChangePasswordResponse.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="Workshop\Models\Requests\RegisterRequest.cs" />
     <Compile Include="Workshop\Models\Response\RegisterResponse.cs" />
     <Compile Include="Workshop\Models\Requests\ResetPasswordRequest.cs" />
+    <Compile Include="Workshop\Models\Response\SendPasswordResetEmailResponse.cs" />
     <Compile Include="Workshop\Models\Response\ResetPasswordResponse.cs" />
     <Compile Include="Workshop\Models\Requests\UpdateEmailRequest.cs" />
     <Compile Include="Workshop\Models\Response\UpdateEmailResponse.cs" />

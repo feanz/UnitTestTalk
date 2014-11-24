@@ -6,9 +6,9 @@ namespace UnitTestTalk.Workshop.Models.Response
 {
     public class BaseResponse
     {
-        public bool Success
+        public bool Error
         {
-            get { return !Errors.Any(); }
+            get { return Errors.Any(); }
         }
 
         public IEnumerable<ValidationResult> Errors { get; set; }

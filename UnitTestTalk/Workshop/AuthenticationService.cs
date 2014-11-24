@@ -136,7 +136,74 @@ namespace UnitTestTalk.Workshop
 
             if (!validationErrors.Any())
             {
+                var membership = _membershipRepository.Get(request.Username);
 
+                if (membership == null)
+                {
+                    validationErrors.Add(new ValidationResult("User does not exist"));
+                }
+                else
+                {
+                    var passwordHash = _hashingService.Hash(request.CurrentPassword);
+
+                    if (passwordHash == membership.PasswordHash)
+                    {
+                        var newPassword = _hashingService.Hash(request.NewPassword);
+
+                        membership.PasswordHash = newPassword;
+
+                        response.PasswordUpdated = true;
+                    }
+                }
+            }
+
+            response.Errors = validationErrors;
+
+            return response;
+        }
+
+        public UpdateEmailResponse UpdateEmail(UpdateEmailRequest request)
+        {
+            if (request == null) throw new ArgumentNullException("request");
+
+            var response = new UpdateEmailResponse();
+
+            var validationErrors = ValidateRequest(request)
+              .ToList();
+
+            if (!validationErrors.Any())
+            {
+                var membership = _membershipRepository.Get(request.Username);
+
+                if (membership == null)
+                {
+                    validationErrors.Add(new ValidationResult("User does not exist"));
+                }
+                else
+                {
+                    membership.Email = request.NewEmail;
+                    response.EmailUpdated = true;
+                }
+            }
+
+            response.Errors = validationErrors;
+
+            return response;
+        }
+
+        public SendPasswordResetEmailResponse SendPasswordResetEmail(SendPasswordResetEmailRequest request)
+        {
+            if (request == null) throw new ArgumentNullException("request");
+
+            var response = new SendPasswordResetEmailResponse();
+
+            var validationErrors = ValidateRequest(request)
+              .ToList();
+
+            if (!validationErrors.Any())
+            {
+                //todo implement code
+                throw new NotImplementedException();
             }
 
             response.Errors = validationErrors;
@@ -155,7 +222,8 @@ namespace UnitTestTalk.Workshop
 
             if (!validationErrors.Any())
             {
-
+                //todo implement code
+                throw new NotImplementedException();
             }
 
             response.Errors = validationErrors;
@@ -163,53 +231,111 @@ namespace UnitTestTalk.Workshop
             return response;
         }
 
-        public UpdateEmailResponse UpdateEmail(UpdateEmailRequest request)
+        private IEnumerable<ValidationResult> ValidateRequest(RegisterRequest request)
         {
-            if (request == null) throw new ArgumentNullException("request");
+            var errors = new List<ValidationResult>();
 
-            var response = new UpdateEmailResponse();
-
-              var validationErrors = ValidateRequest(request)
-                .ToList();
-
-            if (!validationErrors.Any())
+            if (string.IsNullOrWhiteSpace(request.Username))
             {
-
+                errors.Add(new ValidationResult("No username provided"));
             }
 
-            response.Errors = validationErrors;
+            if (string.IsNullOrWhiteSpace(request.Password))
+            {
+                errors.Add(new ValidationResult("No password provided"));
+            }
 
-            return response;
+            if (string.IsNullOrWhiteSpace(request.RepeatPassword))
+            {
+                errors.Add(new ValidationResult("No repeat password provided"));
+            }
+
+            if (request.Password != request.RepeatPassword)
+            {
+                errors.Add(new ValidationResult("Password and repeat do not match"));
+            }
+
+            return errors;
         }
 
-        private IEnumerable<ValidationResult> ValidateRequest(RegisterRequest response)
+        private IEnumerable<ValidationResult> ValidateRequest(LoginRequest request)
         {
-            throw new System.NotImplementedException();
+            var errors = new List<ValidationResult>();
+
+            if (string.IsNullOrWhiteSpace(request.Username))
+            {
+                errors.Add(new ValidationResult("No username provided"));
+            }
+
+            if (string.IsNullOrWhiteSpace(request.Password))
+            {
+                errors.Add(new ValidationResult("No password provided"));
+            }
+
+            return errors;
         }
 
-        private IEnumerable<ValidationResult> ValidateRequest(LoginRequest response)
+        private IEnumerable<ValidationResult> ValidateRequest(ValidateCredentialsRequest request)
         {
+            var errors = new List<ValidationResult>();
+
+            if (string.IsNullOrWhiteSpace(request.Username))
+            {
+                errors.Add(new ValidationResult("No username provided"));
+            }
+
+            if (string.IsNullOrWhiteSpace(request.Password))
+            {
+                errors.Add(new ValidationResult("No password provided"));
+            }
+
+            return errors;
+        }
+
+        private IEnumerable<ValidationResult> ValidateRequest(ChangePasswordRequest request)
+        {
+            //todo implement this to the required spec
             throw new NotImplementedException();
         }
 
-        private IEnumerable<ValidationResult> ValidateRequest(ValidateCredentialsRequest response)
+        private IEnumerable<ValidationResult> ValidateRequest(UpdateEmailRequest request)
         {
+            //todo implement this to the required spec
             throw new NotImplementedException();
         }
 
-        private IEnumerable<ValidationResult> ValidateRequest(ChangePasswordRequest response)
+        private IEnumerable<ValidationResult> ValidateRequest(ResetPasswordRequest request)
         {
-            throw new NotImplementedException();
+            var errors = new List<ValidationResult>();
+
+            if (string.IsNullOrWhiteSpace(request.NewPassword))
+            {
+                errors.Add(new ValidationResult("No new password provided"));
+            }
+
+            if (string.IsNullOrWhiteSpace(request.NewPasswordRepeat))
+            {
+                errors.Add(new ValidationResult("No new password repeat provided"));
+            }
+
+            if (request.NewPassword != request.NewPasswordRepeat)
+            {
+                errors.Add(new ValidationResult("Password and repeat do not match"));
+            }
+
+            return errors;
         }
 
-        private IEnumerable<ValidationResult> ValidateRequest(ResetPasswordRequest response)
+        private IEnumerable<ValidationResult> ValidateRequest(SendPasswordResetEmailRequest request)
         {
-            throw new NotImplementedException();
-        }
+            var errors = new List<ValidationResult>();
 
-        private IEnumerable<ValidationResult> ValidateRequest(UpdateEmailRequest response)
-        {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(request.Username))
+            {
+                errors.Add(new ValidationResult("No username provided"));
+            }
+
+            return errors;
         }
     }
 }
