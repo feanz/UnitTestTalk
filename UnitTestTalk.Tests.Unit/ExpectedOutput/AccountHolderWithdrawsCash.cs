@@ -7,7 +7,7 @@ namespace UnitTestTalk.Tests.Unit.ExpectedOutput
     public class AccountHolderWithdrawsCash
     {
         [Test]
-        public void Request_money_in_account_cash_is_dispensed()
+        public void Request_money_in_account_then_atm_dispenses_cash()
         {
             //Arrange 
             var card = new Card(enabled: true, accountBalance:100);
@@ -21,7 +21,7 @@ namespace UnitTestTalk.Tests.Unit.ExpectedOutput
         }
 
         [Test]
-        public void Request_money_on_disabled_card()
+        public void Request_money_on_disabled_card_then_atm_retains_card()
         {
             //Arrange 
             var card = new Card(enabled: false, accountBalance: 100);
@@ -39,7 +39,7 @@ namespace UnitTestTalk.Tests.Unit.ExpectedOutput
         [TestCase(50, DisplayMessage.None)]
         [TestCase(100, DisplayMessage.None)]
         [TestCase(101, DisplayMessage.InsufficientFunds)]
-        public void Request_money_display_appropriate_message(int amountRequested, DisplayMessage messge)
+        public void Request_money_displays_appropriate_message(int amountRequested, DisplayMessage messge)
         {
             //Arrange 
             var card = new Card(enabled: true, accountBalance: 100);
