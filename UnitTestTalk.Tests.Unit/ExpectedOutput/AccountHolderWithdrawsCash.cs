@@ -10,7 +10,7 @@ namespace UnitTestTalk.Tests.Unit.ExpectedOutput
         public void Request_money_in_account_cash_is_dispensed()
         {
             //Arrange 
-            var card = new Card(true, 100);
+            var card = new Card(enabled: true, accountBalance:100);
             var atm = new Atm(1000);
 
             //Act
@@ -24,7 +24,7 @@ namespace UnitTestTalk.Tests.Unit.ExpectedOutput
         public void Request_money_on_disabled_card()
         {
             //Arrange 
-            var card = new Card(false, 100);
+            var card = new Card(enabled: false, accountBalance: 100);
             var atm = new Atm(1000);
 
             //Act
@@ -42,7 +42,7 @@ namespace UnitTestTalk.Tests.Unit.ExpectedOutput
         public void Request_money_display_appropriate_message(int amountRequested, DisplayMessage messge)
         {
             //Arrange 
-            var card = new Card(true, 100);
+            var card = new Card(enabled: true, accountBalance: 100);
             var atm = new Atm(1000);
 
             //Act
