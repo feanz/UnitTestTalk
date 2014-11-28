@@ -8,36 +8,61 @@ namespace UnitTestTalk.Tests.Unit.Assertion
     public class AssertionTests
     {
         [Test]
-        public void AreNotEqual()
+        public void True()
         {
-            Assert.AreNotEqual(1, 2);
+            Assert.True(2 + 2 == 4);
+        }
+
+        [Test]
+        public void False()
+        {
+            Assert.False(2 + 2 == 5);
+        }
+
+        [Test]
+        public void Null()
+        {
+            Assert.IsNull(null);
         }
 
         [Test]
         public void AreEqual()
         {
-            Assert.AreEqual(1, 1);
+            var value1 = 1;
+            var value2 = 1;
+
+            Assert.AreEqual(value1, value2);
         }
 
         [Test]
-        public void AreNotSame()
+        public void AreNotEqual()
         {
-            var one = new object();
+            var value1 = 1;
+            var value2 = 2;
 
-            var two = new object();
-
-            Assert.AreNotSame(one, two);
+            Assert.AreNotEqual(value1, value2);
         }
 
         [Test]
-        public void AreSame()
+        public void AreEqualObject()
         {
             var one = new object();
 
             var two = one;
 
-            Assert.AreSame(one, two);
+            Assert.AreEqual(one, two);
         }
+
+        [Test]
+        public void AreNotEqualObject()
+        {
+            var one = new object();
+
+            var two = new object();
+
+            Assert.AreNotEqual(one, two);
+        }
+       
 
         [Test]
         public void Throws()
@@ -60,24 +85,6 @@ namespace UnitTestTalk.Tests.Unit.Assertion
             var list = new[] { "one", "two", "three" };
 
             Assert.Contains("one", list);
-        }
-
-        [Test]
-        public void False()
-        {
-            Assert.False(2 + 2 == 5);
-        }
-
-        [Test]
-        public void True()
-        {
-            Assert.True(2 + 2 == 4);
-        }
-
-        [Test]
-        public void Null()
-        {
-            Assert.IsNull(null);
         }
 
         [Test]
