@@ -108,4 +108,4 @@ Add test coverage for the AuthenticationService found in UnitTestTalk\Workshop. 
 * Return error response if token is invalid 
 * Membership 'PasswordHash' is updated to new hash  
 * IMembershipRepository is called to update membership
-* Response 'PasswordEmailSent' property set to true if successful  
+* Response 'PasswordReset' property set to true if successful  
