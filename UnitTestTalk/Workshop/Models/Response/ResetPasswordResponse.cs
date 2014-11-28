@@ -2,5 +2,6 @@
 {
     public class ResetPasswordResponse : BaseResponse
     {
+        public bool PasswordReset { get; set; }
     }
 }
