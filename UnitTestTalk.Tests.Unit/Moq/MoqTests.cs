@@ -7,37 +7,6 @@ namespace UnitTestTalk.Tests.Unit.Moq
     public class MoqTests
     {
         [Test]
-        public void UpdateProfile_updates_profiles_lucky_number()
-        {
-            var existingProfile = new Profile
-                                  {
-                                      Id = 1,
-                                      Name = "Steve"
-                                  };
-
-            var profile = new Profile
-                          {
-                              Id = 1,
-                              Name = "Steve",
-                              LuckyNumber = 100
-                          };
-
-            var mockProfileRepository = new Mock<IProfileRepository>();
-            var mockProfileEventHandler = new Mock<IProfileEventHandler>();
-
-            mockProfileRepository.Setup(repository => repository.GetProfile(existingProfile.Id))
-                .Returns(existingProfile);
-
-            var sut = new ProfileService(new StandardProfileValidator(), mockProfileRepository.Object, mockProfileEventHandler.Object);
-
-            var actual = sut.UpdateProfile(profile);
-
-            Assert.AreEqual(100, actual.LuckyNumber);
-
-            mockProfileRepository.Verify(repository => repository.UpdateProfile(existingProfile), Times.Once);
-        }
-
-        [Test]
         public void GetProfile_when_profile_Vip_event_raised()
         {
             var vipProfile = new Profile
@@ -83,6 +52,37 @@ namespace UnitTestTalk.Tests.Unit.Moq
             sut.GetProfile(1);
 
             mockProfileEventHandler.Verify(handler => handler.VipAccessed(), Times.Never);
+        }
+
+        [Test]
+        public void UpdateProfile_updates_profiles_lucky_number()
+        {
+            var existingProfile = new Profile
+            {
+                Id = 1,
+                Name = "Steve"
+            };
+
+            var profile = new Profile
+            {
+                Id = 1,
+                Name = "Steve",
+                LuckyNumber = 100
+            };
+
+            var mockProfileRepository = new Mock<IProfileRepository>();
+            var mockProfileEventHandler = new Mock<IProfileEventHandler>();
+
+            mockProfileRepository.Setup(repository => repository.GetProfile(existingProfile.Id))
+                .Returns(existingProfile);
+
+            var sut = new ProfileService(new StandardProfileValidator(), mockProfileRepository.Object, mockProfileEventHandler.Object);
+
+            var actual = sut.UpdateProfile(profile);
+
+            Assert.AreEqual(100, actual.LuckyNumber);
+
+            mockProfileRepository.Verify(repository => repository.UpdateProfile(existingProfile), Times.Once);
         }
     }
 }
