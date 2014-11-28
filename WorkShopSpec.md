@@ -42,7 +42,7 @@ Add test coverage for the AuthenticationService found in UnitTestTalk\Workshop. 
 
 ## `ValidateCredentials`
 
-* Should throw exception if request is null* 
+* Should throw exception if request is null 
 * Should validate 'Username' is supplied
 * Should validate 'CurrentPassword' is supplied
 * Should validate 'NewPassword' is supplied
@@ -59,7 +59,10 @@ Add test coverage for the AuthenticationService found in UnitTestTalk\Workshop. 
 
 * Should throw exception if request is null
 * Should validate 'Username' is supplied
-* Should validate 'Password' is supplied
+* Should validate 'CurrentPassword' is supplied
+* Should validate 'NewPassword' is supplied
+* Should validate 'PasswordRepeat' is supplied
+* Should validate 'NewPassword' and 'PasswordRepeat' match
 * Return error response if request is invalid
 * IMembershipRepository is called to get existing user 
 * Return error response if user does not exist
@@ -72,7 +75,7 @@ Add test coverage for the AuthenticationService found in UnitTestTalk\Workshop. 
 
 ## `UpdateEmail`
 
-* Should throw exception if request is null* 
+* Should throw exception if request is null
 * Should validate 'Username' is supplied
 * Should validate 'NewEmail' is supplied
 * Return error response if request is invalid
@@ -94,7 +97,7 @@ Add test coverage for the AuthenticationService found in UnitTestTalk\Workshop. 
 
 ## `ResetPassword`
 
-* Should throw exception if request is null*
+* Should throw exception if request is null
 * Should validate 'Username' is supplied 
 * Should validate 'NewPassword' is supplied
 * Should validate 'NewPasswordRepeat' is supplied
