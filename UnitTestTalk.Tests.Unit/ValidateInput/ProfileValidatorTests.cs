@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace UnitTestTalk.Tests.Unit.ValidateInput
 {
     [TestFixture]
-    public class ProfileValdatorTests
+    public class ProfileValidatorTests
     {
         [Test]
         public void Validate_should_throw_argument_exception_if_null_profile_supplied()
